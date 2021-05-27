@@ -1,0 +1,9 @@
+# Dirs
+.vscode/
+__pycache__/
+env/
+
+# Files
+config.json
+.DS_Store
+*.py[cod]
