@@ -1,8 +1,8 @@
 from time import sleep
 from tuyapy import TuyaApi
 
-from .ac import AC
-from .dht11 import DHT11
+from ac import AC
+from dht11 import DHT11
 from config import SL_USERNAME, SL_PASSWORD, SL_COUNTRYCODE, SL_APPLICATION
 
 
