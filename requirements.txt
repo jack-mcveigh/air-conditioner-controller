@@ -1,3 +1,4 @@
 tuyapy
 Adafruit_DHT
 gpiozero
+requests

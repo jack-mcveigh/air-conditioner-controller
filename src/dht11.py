@@ -1,4 +1,3 @@
-import gpiozero
 import Adafruit_DHT
 
 
