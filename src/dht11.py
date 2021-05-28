@@ -1,17 +1,25 @@
-import Adafruit_DHT
+import board
+import adafruit_dht
 
 
 class DHT11:
-    def __init__(self, pin=18):
-        self.pin = pin
+    def __init__(self):
+        self.device = adafruit_dht.DHT11(board.D18)
         self.temp_c = 0
         self.temp_f = 0
         self.hum = 0
 
     def read(self):
-        self.hum, self.temp_c = \
-            Adafruit_DHT.read_retry(Adafruit_DHT.DHT11, self.pin)
-        return self.hum, self.temp_c, self.to_fahrenheit(self.temp_c)
+        try:
+            self.temp_c = self.device.temperature
+            self.to_fahrenheit()
+            self.hum = self.device.humidity
+        except RuntimeError:
+            return 0
+        except Exception as error:
+            self.device.exit()
+            raise error
+        return 1
 
     def to_fahrenheit(self):
         self.temp_f = (self.temp_c * 9 / 5) + 32

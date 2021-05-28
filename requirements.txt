@@ -1,4 +1,3 @@
 tuyapy
-Adafruit_DHT
-gpiozero
 requests
+adafruit-circuitpython-dht
